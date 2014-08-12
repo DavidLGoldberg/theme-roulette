@@ -1,11 +1,13 @@
 {View} = require 'atom'
 _ = require 'lodash'
 
+rollingMessage = "Theme Dice: Rolling..."
+
 module.exports =
 class ThemeDiceView extends View
   @content: ->
     @div class: 'theme-dice overlay from-top', =>
-      @div "Theme Dice: Rolling...", class: "message"
+      @div rollingMessage, class: "message"
 
   initialize: (serializeState) ->
     atom.workspaceView.command "theme-dice:roll", => @roll()
@@ -18,14 +20,19 @@ class ThemeDiceView extends View
     @detach()
 
   roll: ->
-
     if @hasParent()
       @detach()
     else
+      message = this.find '.message'
+      message.html rollingMessage
       atom.workspaceView.append(this)
       setTimeout =>
-        @detach()
-        console.log "Theme Dice: Rolling..."
-        randomTheme = _.shuffle(atom.themes.getLoadedThemes())[0]
-        atom.themes.setEnabledThemes ['atom-dark-ui', randomTheme.name]
+          randomTheme = _.shuffle(atom.themes.getLoadedThemes())[0]
+          rolledMessage = "Theme Dice: Rolled #{randomTheme.name}"
+          console.log rolledMessage
+          message.html rolledMessage
+          atom.themes.setEnabledThemes ['atom-dark-ui', randomTheme.name]
+          setTimeout =>
+            @detach()
+          , 2500
       , 500
