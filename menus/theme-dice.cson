@@ -1,0 +1,16 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  '.overlayer':
+      'Roll Theme Dice!': 'theme-dice:roll'
+
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Theme Dice'
+      'submenu': [
+        { 'label': 'Roll!', 'command': 'theme-dice:roll' }
+      ]
+    ]
+  }
+]

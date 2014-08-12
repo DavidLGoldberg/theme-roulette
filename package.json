@@ -1,0 +1,22 @@
+{
+  "name": "theme-dice",
+  "main": "./lib/theme-dice",
+  "version": "0.0.0",
+  "description": "(Not ready yet) An Atom package to randomly select one of your themes for you. Keep it fresh!",
+  "keywords": [
+    "themes",
+    "random",
+    "rotation",
+    "fun",
+    "user experience",
+    "vision"
+  ],
+  "activationEvents": ["theme-dice:roll"],
+  "repository": "https://github.com/atom/theme-dice",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}
