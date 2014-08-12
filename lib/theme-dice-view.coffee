@@ -1,4 +1,5 @@
 {View} = require 'atom'
+_ = require 'lodash'
 
 module.exports =
 class ThemeDiceView extends View
@@ -17,8 +18,14 @@ class ThemeDiceView extends View
     @detach()
 
   roll: ->
-    console.log "Theme Dice: Rolling..."
+
     if @hasParent()
       @detach()
     else
       atom.workspaceView.append(this)
+      setTimeout =>
+        @detach()
+        console.log "Theme Dice: Rolling..."
+        randomTheme = _.shuffle(atom.themes.getLoadedThemes())[0]
+        atom.themes.setEnabledThemes ['atom-dark-ui', randomTheme.name]
+      , 500
