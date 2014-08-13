@@ -1,7 +1,7 @@
 {
   "name": "theme-dice",
   "main": "./lib/theme-dice",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "An Atom package to randomly select one of your themes for you.  It's all or nothing!",
   "keywords": [
     "themes",
@@ -13,7 +13,9 @@
     "user experience",
     "vision"
   ],
-  "activationEvents": ["theme-dice:roll"],
+  "activationEvents": [
+    "theme-dice:roll"
+  ],
   "repository": "https://github.com/davidlgoldberg/theme-dice",
   "license": "MIT",
   "engines": {
