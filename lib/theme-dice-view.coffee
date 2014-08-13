@@ -33,8 +33,10 @@ class ThemeDiceView extends View
                 rolledMessage = "Theme Dice: Rolled #{randomTheme.name}"
                 console.log rolledMessage
                 message.html rolledMessage
-                atom.themes.setEnabledThemes ['atom-dark-ui',
-                    randomTheme.name]
+                atom.themes.setEnabledThemes [
+                    atom.config.get 'theme-dice.defaultUi'
+                    randomTheme.name
+                ]
                 setTimeout =>
                     @detach()
                 , 3500

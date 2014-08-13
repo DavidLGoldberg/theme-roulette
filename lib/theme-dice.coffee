@@ -3,6 +3,7 @@ ThemeDiceView = require './theme-dice-view'
 module.exports =
     themeDiceView: null
     configDefaults:
+        defaultUi: 'atom-dark-ui'
         roundLengthInSeconds: 0
 
     activate: (state) ->
