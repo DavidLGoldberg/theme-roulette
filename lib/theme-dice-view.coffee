@@ -25,9 +25,11 @@ class ThemeDiceView extends View
         else
             message = this.find '.message'
             message.html rollingMessage
-            atom.workspaceView.append(this)
+            atom.workspaceView.append this
             setTimeout =>
-                randomTheme = _.shuffle(atom.themes.getLoadedThemes())[0]
+                themes = atom.themes.getLoadedThemes().filter (theme) ->
+                    theme.name[-3..] != '-ui'
+                randomTheme = _.shuffle(themes)[0]
                 rolledMessage = "Theme Dice: Rolled #{randomTheme.name}"
                 console.log rolledMessage
                 message.html rolledMessage
