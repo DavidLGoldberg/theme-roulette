@@ -16,8 +16,6 @@ Randomly switches you to one of your themes.
 Optional **automatic** theme switching! (frequency *in seconds*).
 
 ## Settings
-* **Default Ui**
-    * Default UI (*-ui) theme name.  Defaults to 'atom-dark-ui'
 * **Round Length In Seconds**
     * Set to 0 for manual (**default**)
     * *Feeling Lucky?* Try 210 Seconds (3.5 minutes)
