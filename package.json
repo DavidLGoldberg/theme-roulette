@@ -1,8 +1,8 @@
 {
   "name": "theme-roulette",
   "main": "./lib/theme-roulette",
-  "version": "1.0.0",
-  "description": "An Atom package to randomly select one of your themes for you.  It's all or nothing!",
+  "version": "0.0.0",
+  "description": "Randomly selects one of your themes for you!",
   "keywords": [
     "themes",
     "switch themes",
