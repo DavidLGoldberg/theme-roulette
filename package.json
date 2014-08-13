@@ -2,7 +2,7 @@
   "name": "theme-dice",
   "main": "./lib/theme-dice",
   "version": "0.0.0",
-  "description": "(Not ready yet) An Atom package to randomly select one of your themes for you. Keep it fresh!",
+  "description": "An Atom package to randomly select one of your themes for you.  It's all or nothing!",
   "keywords": [
     "themes",
     "switch themes",
