@@ -14,7 +14,7 @@
     "vision"
   ],
   "activationEvents": ["theme-dice:roll"],
-  "repository": "https://github.com/atom/theme-dice",
+  "repository": "https://github.com/davidlgoldberg/theme-dice",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
