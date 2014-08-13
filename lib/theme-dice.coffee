@@ -1,21 +1,21 @@
-ThemeDiceView = require './theme-dice-view'
+ThemeRouletteView = require './theme-roulette-view'
 
 module.exports =
-    themeDiceView: null
+    themeRouletteView: null
     configDefaults:
         defaultUi: 'atom-dark-ui'
         roundLengthInSeconds: 0
 
     activate: (state) ->
-        @themeDiceView = new ThemeDiceView(state.themeDiceViewState)
-        roundLength = atom.config.get 'theme-dice.roundLengthInSeconds'
+        @themeRouletteView = new ThemeRouletteView(state.themeRouletteViewState)
+        roundLength = atom.config.get 'theme-roulette.roundLengthInSeconds'
         if roundLength > 0
             setInterval =>
-                @themeDiceView.roll()
+                @themeRouletteView.spin()
             , roundLength * 1000
 
     deactivate: ->
-        @themeDiceView.destroy()
+        @themeRouletteView.destroy()
 
     serialize: ->
-        themeDiceViewState: @themeDiceView.serialize()
+        themeRouletteViewState: @themeRouletteView.serialize()

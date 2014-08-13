@@ -1,11 +1,11 @@
-# Theme Dice
+# Theme Roulette
 
 An Atom package to randomly select one of your themes for you.
 
 It's all or nothing!
 
 
-## Roll!
+## Spin!
 
 <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>cmd</kbd> + <kbd>t</kbd>
 
@@ -22,7 +22,7 @@ Optional **automatic** theme switching! (frequency *in seconds*).
     * Set to 0 for manual (**default**)
     * *Feeling Lucky?* Try 210 Seconds (3.5 minutes)
 
-![Theme Dice settings](https://raw.githubusercontent.com/DavidLGoldberg/theme-dice/master/_images/theme-dice-settings.png)
+![Theme Roulette settings](https://raw.githubusercontent.com/DavidLGoldberg/theme-roulette/master/_images/theme-roulette-settings.png)
 
 (Randomly select a theme Every 3.5 minutes)
 

@@ -1,6 +1,6 @@
 {
-  "name": "theme-dice",
-  "main": "./lib/theme-dice",
+  "name": "theme-roulette",
+  "main": "./lib/theme-roulette",
   "version": "1.0.0",
   "description": "An Atom package to randomly select one of your themes for you.  It's all or nothing!",
   "keywords": [
@@ -14,9 +14,9 @@
     "vision"
   ],
   "activationEvents": [
-    "theme-dice:roll"
+    "theme-roulette:spin"
   ],
-  "repository": "https://github.com/davidlgoldberg/theme-dice",
+  "repository": "https://github.com/davidlgoldberg/theme-roulette",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
