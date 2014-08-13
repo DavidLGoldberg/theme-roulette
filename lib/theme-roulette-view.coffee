@@ -27,15 +27,15 @@ class ThemeRouletteView extends View
             message.html spinningMessage
             atom.workspaceView.append this
             setTimeout =>
-                themes = atom.themes.getLoadedThemes().filter (theme) ->
-                    theme.name[-3..] != '-ui'
-                randomTheme = _.shuffle(themes)[0]
-                spunMessage = "Theme Roulette: Spun #{randomTheme.name}"
+                themeNames = atom.themes.getLoadedNames().filter (name) ->
+                    !name.endsWith '-ui'
+                randomThemeName = _.shuffle(themeNames)[0]
+                spunMessage = "Theme Roulette: Spun #{randomThemeName}"
                 console.log spunMessage
                 message.html spunMessage
                 atom.themes.setEnabledThemes [
-                    atom.config.get 'theme-roulette.defaultUi'
-                    randomTheme.name
+                    atom.themes.getActiveNames()[1]
+                    randomThemeName
                 ]
                 setTimeout =>
                     @detach()

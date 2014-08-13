@@ -3,7 +3,6 @@ ThemeRouletteView = require './theme-roulette-view'
 module.exports =
     themeRouletteView: null
     configDefaults:
-        defaultUi: 'atom-dark-ui'
         roundLengthInSeconds: 0
 
     activate: (state) ->
