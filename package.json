@@ -11,7 +11,9 @@
     "rotation",
     "fun",
     "user experience",
-    "vision"
+    "vision",
+    "atom",
+    "atom package"
   ],
   "activationEvents": [
     "theme-roulette:spin"
