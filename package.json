@@ -1,7 +1,7 @@
 {
   "name": "theme-roulette",
   "main": "./lib/theme-roulette",
-  "version": "2.0.0",
+  "version": "0.0.0",
   "description": "Randomly selects one of your themes for you!",
   "keywords": [
     "themes",
