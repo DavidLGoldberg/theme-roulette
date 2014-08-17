@@ -20,6 +20,17 @@ class ThemeRouletteView extends View
         @detach()
 
     spin: ->
+        setRandomTheme = (message) ->
+            themeNames = atom.themes.getLoadedNames().filter (name) ->
+                !name.endsWith '-ui'
+            randomThemeName = _.shuffle(themeNames)[0]
+            atom.themes.setEnabledThemes [
+                atom.themes.getActiveNames()[1]
+                randomThemeName
+            ]
+
+            return randomThemeName
+
         if @hasParent()
             @detach()
         else
@@ -27,16 +38,10 @@ class ThemeRouletteView extends View
             message.html spinningMessage
             atom.workspaceView.append this
             setTimeout =>
-                themeNames = atom.themes.getLoadedNames().filter (name) ->
-                    !name.endsWith '-ui'
-                randomThemeName = _.shuffle(themeNames)[0]
-                spunMessage = "Theme Roulette: Spun #{randomThemeName}"
+                spunTheme = setRandomTheme()
+                spunMessage = "Theme Roulette: Spun #{spunTheme}"
                 console.log spunMessage
                 message.html spunMessage
-                atom.themes.setEnabledThemes [
-                    atom.themes.getActiveNames()[1]
-                    randomThemeName
-                ]
                 setTimeout =>
                     @detach()
                 , 3500
