@@ -9,15 +9,27 @@ class ThemeRouletteView extends View
         @div class: 'theme-roulette overlay from-top', =>
             @div spinningMessage, class: "message"
 
+    @setRounds: (roundLength) ->
+        clearInterval @interval if @interval?
+        @interval = setInterval =>
+            @spin()
+        , roundLength * 1000 if roundLength?
+
     initialize: (serializeState) ->
         atom.workspaceView.command "theme-roulette:spin", => @spin()
+        atom.workspaceView.command "theme-roulette:pause", => @pause()
+
         @subscribe atom.config.observe 'theme-roulette.roundLengthInSeconds',
-        (value) =>
-            clearInterval @interval if @interval?
-            roundLength = value if value > 0
-            @interval = setInterval =>
-                @spin()
-            , roundLength * 1000 if roundLength?
+        (roundLength) ->
+            if roundLength > 0
+                @roundLength = roundLength
+                @setRounds @roundLength
+
+        @state = { paused: false }
+
+        Object.observe @state, (changes) ->
+            changes.forEach (change) ->
+                setRounds @roundLength if !@state.paused and @roundLength?
 
     # Returns an object that can be retrieved when package is activated
     serialize: ->
@@ -26,7 +38,12 @@ class ThemeRouletteView extends View
     destroy: ->
         @detach()
 
+    pause: ->
+        @state.paused = true
+        clearInterval @interval if @interval?
+
     spin: ->
+        @state.paused = false
         setRandomTheme = (message) ->
             themeNames = atom.themes.getLoadedNames().filter (name) ->
                 !name.endsWith '-ui'

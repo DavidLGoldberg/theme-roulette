@@ -1,3 +1,7 @@
+## 1.1.0
+* Adds a pause feature for 'rounds' (scheduled spins). This effectively
+  keeps the current theme until a new manual spin.
+
 ## 1.0.1
 * Automatic initialization and loading of rounds.
 * Observable settings so intervals can be instantly removed or added
