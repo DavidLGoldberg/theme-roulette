@@ -15,9 +15,6 @@
     "atom",
     "atom package"
   ],
-  "activationEvents": [
-    "theme-roulette:spin"
-  ],
   "repository": "https://github.com/davidlgoldberg/theme-roulette",
   "license": "MIT",
   "engines": {

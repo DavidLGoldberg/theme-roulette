@@ -7,11 +7,6 @@ module.exports =
 
     activate: (state) ->
         @themeRouletteView = new ThemeRouletteView(state.themeRouletteViewState)
-        roundLength = atom.config.get 'theme-roulette.roundLengthInSeconds'
-        if roundLength > 0
-            setInterval =>
-                @themeRouletteView.spin()
-            , roundLength * 1000
 
     deactivate: ->
         @themeRouletteView.destroy()

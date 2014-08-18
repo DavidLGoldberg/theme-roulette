@@ -11,6 +11,13 @@ class ThemeRouletteView extends View
 
     initialize: (serializeState) ->
         atom.workspaceView.command "theme-roulette:spin", => @spin()
+        @subscribe atom.config.observe 'theme-roulette.roundLengthInSeconds',
+        (value) =>
+            clearInterval @interval if @interval?
+            roundLength = value if value > 0
+            @interval = setInterval =>
+                @spin()
+            , roundLength * 1000 if roundLength?
 
     # Returns an object that can be retrieved when package is activated
     serialize: ->
