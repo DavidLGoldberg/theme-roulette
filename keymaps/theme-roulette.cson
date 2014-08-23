@@ -9,3 +9,4 @@
 # https://atom.io/docs/latest/advanced/keymaps
 '.workspace':
     'ctrl-alt-cmd-t': 'theme-roulette:spin'
+    'shift-ctrl-alt-cmd-t': 'theme-roulette:pause'

@@ -15,6 +15,11 @@ Randomly switches you to one of your themes.
 
 Optional **automatic** theme switching! (frequency *in seconds*).
 
+### Pause
+
+<kbd>shift</kbd> + <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>cmd</kbd> + <kbd>t</kbd>
+
+
 ## Settings
 * **Round Length In Seconds**
     * Set to 0 for manual (**default**)
@@ -26,7 +31,6 @@ Optional **automatic** theme switching! (frequency *in seconds*).
 
 ## TODO
 * Return to previous theme
-* Pause rounds (stay on current theme)
 * Non shuffled, ordered, theme cycle
 
 ## My Shameless Plugs

@@ -1,6 +1,8 @@
 ## 1.1.0
 * Adds a pause feature for 'rounds' (scheduled spins). This effectively
   keeps the current theme until a new manual spin.
+* shift-ctrl-alt-cmd-t to pause!
+
 
 ## 1.0.1
 * Automatic initialization and loading of rounds.
